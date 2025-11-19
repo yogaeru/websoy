@@ -88,7 +88,7 @@ def predict_obesity(user_input):
     
     print("Loading model package from:", current_path)
     model_package = joblib.load(
-        f"{current_path}\\model\\obesity_model_complete.joblib")
+        f"{current_path}/model/obesity_model_complete.joblib")
     
     
     model = model_package['model']
