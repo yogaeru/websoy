@@ -84,14 +84,13 @@ def predict_obesity(user_input):
     }
     """
 
-    current_path = Path(os.getcwd())
-    # parent_dir = current_path.parent         #
-
-    # Load the complete model package (contains model, encoders, features, target_col)
-    # model_package = joblib.load("D:\\project\\websoy\\modules\\model\\obesity_model_complete.joblib")
+    current_path = Path(__file__).resolve().parent.parent
+    
+    print("Loading model package from:", current_path)
     model_package = joblib.load(
-        f"{current_path}\\modules\\model\\obesity_model_complete.joblib")
-
+        f"{current_path}\\model\\obesity_model_complete.joblib")
+    
+    
     model = model_package['model']
     encoders = model_package['encoders']
     feature_names = model_package['feature_names']
