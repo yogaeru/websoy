@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/static", StaticFiles(directory="src"), name="static") 
+app.mount("/static", StaticFiles(directory="src", html=False), name="static") 
 
 # ============================================================================
 @app.get("/")
